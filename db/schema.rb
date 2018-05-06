@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180329074600) do
+ActiveRecord::Schema.define(version: 20180506044348) do
 
   create_table "band_memberships", force: :cascade do |t|
     t.integer "access_level", default: 0
@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 20180329074600) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "password_digest"
+    t.string "initial_password"
   end
 
 end
