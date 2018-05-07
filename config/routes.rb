@@ -1,3 +1,9 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  namespace :api do
+    resources :bands
+    resources :users
+    resources :band_memberships
+  end
+
+  post '/login', to: 'sessions#create'
 end
