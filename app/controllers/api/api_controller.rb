@@ -8,7 +8,7 @@ module Api
       all_records = paginate(model.all.order(created_at: :desc), params)
       render(
         status: :ok, 
-        json: { data: all_records }
+        json: all_records
       )
     end
 

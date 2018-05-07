@@ -81,7 +81,7 @@ module Api
     end
 
     def load_band
-      @band = Band.find_by(params[:id])
+      @band = Band.find_by(id: params[:id])
     end
 
     def build_or_load_user

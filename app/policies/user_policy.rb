@@ -6,7 +6,7 @@ class UserPolicy
     @params = params
   end
   
-  def can_create_new_user?
+  def can_register?
     true
   end
 end
