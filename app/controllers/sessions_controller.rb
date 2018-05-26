@@ -9,9 +9,16 @@ class SessionsController < ApplicationController
       jwt = Auth.issue({user: user.id})
       render(
         status: :ok,
-        json: { jwt: jwt }
+        json: { jwt: jwt,
+                user_id: user.id,
+                user_email: user.email,
+                user_name: user.name, }
       ) && return
     end
+      render(
+        status: :unauthorized,
+        json: { error: 'Could not authorize. Double check username / password.' }
+      ) && return
   end
 
   private
